@@ -16,11 +16,13 @@ const CharacterCard = ({
 }: CharacterProps) => {
   return (
     <div className={classes.characterComponent}>
-      <div className={classes.characterCard}>
+      <div
+        className={`${classes.characterCard} ${classes[status.toLowerCase()]}`}
+      >
         <h3>{name}</h3>
         <p>
           Status:{" "}
-          <span className={classes[status.toLowerCase()]}>{status}</span>
+          <span>{status}</span>
         </p>
         <p>
           Species: <span>{species}</span>

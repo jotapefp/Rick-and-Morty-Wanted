@@ -1,6 +1,6 @@
 .characterComponent {
-  width: 90%;
-  height: 100%;
+  width: auto;
+  height: auto;
 }
 
 .characterCard {
@@ -12,19 +12,17 @@
   height: 100%;
   min-height: 500px;
   padding: 1rem;
-  border: 2px solid #97ce4c;
+  border: 3px solid #333;
   border-radius: 10px;
-  background-color: #000;
   box-sizing: border-box;
-  font-family: "Bangers";
+  font-family: "Bangers", cursive;
 }
 
 .characterCard h3 {
-  color: #4A9DAE;
+  color: #0f0f0f;
   margin: 0 0 1rem;
   font-size: 3rem;
-  font-family: "Get Schwifty";
-
+  font-family: "Get Schwifty", cursive;
   text-shadow:
     2px 0 #f5f5f5,
     -2px 0 #f5f5f5,
@@ -34,31 +32,33 @@
 
 .characterCard p {
   width: 100%;
-  color: #f5f5f5;
+  color: #000;
   margin: 0.25rem 0;
   font-size: 1.5rem;
   line-height: 1.2;
   overflow-wrap: break-word;
+  text-shadow:
+    2px 0 #f5f5f5,
+    -2px 0 #f5f5f5,
+    0 2px #f5f5f5,
+    0 -2px #f5f5f5;
 }
 
-/* Status */
-.characterCard .alive {
-  color: #97ce4c;
+.characterCard.alive {
+  background-color: #006400;
 }
-
-.characterCard .unknown {
-  color: #f0e14a;
+.characterCard.dead {
+  background-color: #800000;
 }
-
-.characterCard .dead {
-  color: #e74c3c;
+.characterCard.unknown {
+  background-color: #ffd700;
 }
 
 .characterCard img {
+  border: 2px solid #333;
   width: 100%;
   max-width: 250px;
   margin-top: auto;
-  padding-top: 1rem;
   border-radius: 8px;
 }
 
@@ -67,8 +67,43 @@
   padding: 0.5rem 1rem;
   font-size: 1rem;
   color: #f5f5f5;
-  background-color: #4A9DAE;
+  background-color: #333;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: "Get Schwifty", cursive;
+}
+
+.button:hover {
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+  .characterCard {
+    width: 100%;
+    min-height: 450px;
+  }
+
+  .characterCard h3 {
+    font-size: 2.2rem;
+  }
+
+  .characterCard p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .characterCard {
+    min-height: auto;
+  }
+
+  .characterCard h3 {
+    font-size: 1.8rem;
+  }
+
+  .characterCard p {
+    font-size: 1.1rem;
+  }
 }

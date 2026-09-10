@@ -1,10 +1,10 @@
 .characterList {
   margin-top: 3rem;
-  margin-left: 5rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   align-items: stretch;
+  padding: 0 2rem; 
 }
 
 .error p {
@@ -18,4 +18,27 @@
   max-width: 400px;
   border-radius: 5px;
   font-size: 1.2rem;
+}
+
+@media (max-width: 1024px) {
+  .characterList {
+    grid-template-columns: repeat(2, 1fr); 
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .characterList {
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+    padding: 0 1rem;
+    margin-top: 2rem;
+  }
+
+  .error p {
+    padding: 30px 20px;
+    margin-top: 30px;
+    font-size: 1rem;
+    max-width: 90%;
+  }
 }

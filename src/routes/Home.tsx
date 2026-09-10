@@ -14,7 +14,12 @@ const Home = () => {
 
       <h2>About the project</h2>
       <p>
-        This project is a simple React application that consumes the Rick and Morty API to display information about characters and episodes.
+        Welcome to Rick and Morty's Wanted! To get started, you can explore
+        characters from the Rick and Morty universe by clicking the "Characters"
+        tab; you will be directed to the character search page. After entering a
+        character's name, you will have access to their information. If you wish
+        to see more, you can click to view further details, including their
+        image, status, species, and much more. Enjoy exploring!
       </p>
     </div>
   );

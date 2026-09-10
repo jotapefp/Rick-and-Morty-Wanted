@@ -13,17 +13,11 @@ const Navbar = () => {
           Home
         </Link>
       </h2>
-      <ul>
-        <li>
-          <Link
-            to="/character"
-            onClick={resetSearch}
-            className={classes.titles}
-          >
-            Characters
-          </Link>
-        </li>
-      </ul>
+      <h2>
+        <Link to="/character" onClick={resetSearch} className={classes.titles}>
+          Characters
+        </Link>
+      </h2>
     </div>
   );
 };

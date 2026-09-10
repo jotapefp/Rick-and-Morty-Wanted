@@ -14,10 +14,11 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  padding: 0 1rem;
 }
 
 .search input {
-  width: 300px;
+  width: min(300px, 90vw);
   height: 50px;
   border-radius: 5px;
   font-family: "Bangers";
@@ -34,9 +35,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .search button:hover {
   background-color: #88e23b;
   border-color: #f0e14a;
+}
+
+@media (max-width: 480px) {
+  .search h2 {
+    font-size: 2rem;
+  }
+
+  .search input {
+    font-size: 16px;
+    height: 45px;
+  }
 }
