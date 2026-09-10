@@ -2,7 +2,7 @@
 
 Projeto autoral desenvolvido para fins de estudo, com o objetivo de praticar consumo de API, componentização em React e boas práticas de desenvolvimento front-end usando TypeScript.
 
-Link para teste https://rick-and-morty-wanted.vercel.app/
+Link para teste: https://rick-and-morty-wanted.vercel.app/
 
 ### 🧪 Tecnologias utilizadas
 
@@ -12,29 +12,31 @@ Link para teste https://rick-and-morty-wanted.vercel.app/
 - CSS3
 - [Rick and Morty API](https://rickandmortyapi.com/) (API pública)
 
-### ⚙️ Funcionalidades (v1)
+### ⚙️ Funcionalidades
 
-- **Home**: página principal da aplicação, acessível a qualquer momento pelo link "Home" na navbar
-- **Busca de personagens**: campo de input onde o usuário digita o nome (ou parte do nome) de um personagem
+- **Home**: página informativa, acessível a qualquer momento pelo link "Home" na navbar
+- **Characters**: aba da navbar onde fica a aplicação, com o campo de input onde o usuário digita o nome (ou parte do nome) de um personagem
 - **Listagem de resultados**: exibe todos os personagens cujo nome corresponde à busca, com seus dados (nome, status, espécie, gênero, origem, localização e imagem)
-- **Tratamento de erro**: página/mensagem de erro exibida quando nenhum personagem é encontrado com o nome pesquisado
+- **Paginação**: navegação por números de página, respeitando o filtro de busca aplicado — buscas com muitos resultados agora exibem todas as páginas disponíveis, não só a primeira
+- **Página de detalhes**: ao clicar em "View Details" num personagem, o usuário acessa uma página dedicada com informações completas (espécie, gênero, status, origem, última localização, número de aparições em episódios e tipo)
+- **Tratamento de erro**: mensagem exibida quando nenhum personagem é encontrado com o nome pesquisado
+- **Responsividade**: layout adaptado para desktop, tablet e celular, mantendo a mesma identidade visual em todos os tamanhos de tela
 
 ### 🎨 Estilização
 
-A v1 utiliza um CSS inicial, funcional mas ainda simples. Refinamentos visuais (paleta de cores, tipografia, responsividade e identidade visual mais elaborada) estão planejados para versões futuras.
+Identidade visual construída em torno do tema "painel de laboratório interdimensional": fundo escuro, tipografia temática (Get Schwifty nos títulos, Bangers no corpo de texto), cores associadas ao status dos personagens (vivo, morto, desconhecido) e efeitos visuais inspirados no universo da série. O CSS foi refinado na v2 com breakpoints para diferentes tamanhos de tela.
 
-### 🐛 Limitação conhecida (a ser corrigida na v2)
+### 🆕 Novidades da v2
 
-Atualmente, a busca retorna **apenas a primeira página** de resultados da API. A Rick and Morty API já possui um sistema de paginação nativo (`info.next` / `info.prev`), que ainda não foi implementado nesta versão — ou seja, buscas com muitos resultados não exibem a lista completa. Essa é a principal melhoria planejada para a v2.
+- Implementada paginação completa dos resultados da API (antes, só a primeira página era exibida)
+- Criada a página de detalhes por personagem
+- CSS revisado e expandido com media queries para tablet e celular
+- Corrigidos bugs de layout que causavam overflow horizontal em telas pequenas
 
 ### 🗺️ Roadmap (próximas versões)
 
-- [ ] Implementar paginação completa dos resultados da API
-- [ ] Refinar identidade visual (paleta, tipografia, responsividade)
-- [ ] Página de detalhes por personagem
 - [ ] Implementação da escolha de idioma (inglês, espanhol e português)
 - [ ] Possibilidade de favoritar um ou mais personagens
-- [ ] Compatibilidade com diferentes tamanhos de tela
 
 ### 📎 Créditos e referências
 
