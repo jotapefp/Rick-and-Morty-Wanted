@@ -35,8 +35,9 @@ Identidade visual construída em torno do tema "painel de laboratório interdime
 
 ### 🗺️ Roadmap (próximas versões)
 
-- [ ] Implementação da escolha de idioma (inglês, espanhol e português)
-- [ ] Possibilidade de favoritar um ou mais personagens
+- [ ] Novas formas de buscar informações da API (episódios e locais)
+- [ ] Trazer mais informações quando entrar na página de detalhes
+- [ ] Uma maneira de mostrar todos os personagens sem fazer a busca
 
 ### 📎 Créditos e referências
 
