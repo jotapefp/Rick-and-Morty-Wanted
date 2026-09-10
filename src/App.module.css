@@ -11,6 +11,12 @@
   margin-bottom: 2rem;
 }
 
+.app h1 img {
+  width: auto;
+  height: auto;
+  max-width: 90%;
+}
+
 .content {
   flex: 1;
 }
@@ -18,5 +24,9 @@
 @media (max-width: 480px) {
   .app h1 {
     margin-bottom: 1rem;
+  }
+
+  .app h1 img {
+    max-width: 95%;
   }
 }
