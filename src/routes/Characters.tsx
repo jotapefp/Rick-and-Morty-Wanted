@@ -16,9 +16,7 @@ const Characters = () => {
           <CharacterCard key={character.id} {...character} />
         ))}
       </div>
-
-      {/* Some'oculto automaticamente enquanto totalPages <= 1 (antes da
-          primeira busca, ou quando a busca retorna só uma página) */}
+      
       <Pagination />
 
       <div className={classes.error}>

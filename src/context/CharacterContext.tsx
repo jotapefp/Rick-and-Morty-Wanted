@@ -29,8 +29,6 @@ export const CharacterProvider = ({ children }: { children: ReactNode }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  // useRef em vez de let: o valor .current sobrevive a re-renders
-  // sem ser recriado do zero e sem disparar um re-render próprio.
   const lastSearchTerm = useRef("");
 
   const fetchCharacters = async (characterName: string, page: number) => {
@@ -60,12 +58,12 @@ export const CharacterProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const loadCharacter = async (characterName: string) => {
-    lastSearchTerm.current = characterName; // grava de forma persistente
+    lastSearchTerm.current = characterName; 
     await fetchCharacters(characterName, 1);
   };
 
   const goToPage = async (page: number) => {
-    await fetchCharacters(lastSearchTerm.current, page); // lê o valor persistido
+    await fetchCharacters(lastSearchTerm.current, page); 
   };
 
   const resetSearch = () => {
