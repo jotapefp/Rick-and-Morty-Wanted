@@ -16,10 +16,11 @@ const Home = () => {
       <p>
         Welcome to Rick and Morty's Wanted! To get started, you can explore
         characters from the Rick and Morty universe by clicking the "Characters"
-        tab; you will be directed to the character search page. After entering a
-        character's name, you will have access to their information. If you wish
-        to see more, you can click to view further details, including their
-        image, status, species, and much more. Enjoy exploring!
+        tab; this will take you to the character search page. You can search for
+        character information by entering a name, status, or both. Once you
+        perform a search, you will have access to the relevant information. If
+        you want to know more, you can click to view additional details,
+        including images, status, species, and much more. Have fun exploring!
       </p>
     </div>
   );

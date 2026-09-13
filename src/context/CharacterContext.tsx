@@ -13,7 +13,7 @@ interface CharacterContextType {
   resetKey: number;
   currentPage: number;
   totalPages: number;
-  loadCharacter: (characterName: string) => Promise<void>;
+  loadCharacter: (characterName: string, status: string) => Promise<void>;
   goToPage: (page: number) => Promise<void>;
   resetSearch: () => void;
 }
@@ -30,15 +30,23 @@ export const CharacterProvider = ({ children }: { children: ReactNode }) => {
   const [totalPages, setTotalPages] = useState(1);
 
   const lastSearchTerm = useRef("");
+  const lastStatus = useRef("");
 
-  const fetchCharacters = async (characterName: string, page: number) => {
+  const fetchCharacters = async (
+    characterName: string,
+    status: string,
+    page: number,
+  ) => {
     setError(false);
+    
+    const params = new URLSearchParams();
+    if (characterName.trim()) params.set("name", characterName.trim());
+    if (status) params.set("status", status);
+    params.set("page", String(page));
 
     try {
       const res = await fetch(
-        `https://rickandmortyapi.com/api/character/?name=${encodeURIComponent(
-          characterName,
-        )}&page=${page}`,
+        `https://rickandmortyapi.com/api/character/?${params.toString()}`,
       );
 
       if (res.status === 404) {
@@ -57,13 +65,14 @@ export const CharacterProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  const loadCharacter = async (characterName: string) => {
-    lastSearchTerm.current = characterName; 
-    await fetchCharacters(characterName, 1);
+  const loadCharacter = async (characterName: string, status: string) => {
+    lastSearchTerm.current = characterName;
+    lastStatus.current = status;
+    await fetchCharacters(characterName, status, 1);
   };
 
   const goToPage = async (page: number) => {
-    await fetchCharacters(lastSearchTerm.current, page); 
+    await fetchCharacters(lastSearchTerm.current, lastStatus.current, page);
   };
 
   const resetSearch = () => {
@@ -71,6 +80,8 @@ export const CharacterProvider = ({ children }: { children: ReactNode }) => {
     setError(false);
     setCurrentPage(1);
     setTotalPages(1);
+    lastSearchTerm.current = "";
+    lastStatus.current = "";
     setResetKey((prev) => prev + 1);
   };
 

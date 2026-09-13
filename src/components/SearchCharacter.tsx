@@ -1,20 +1,22 @@
 type SearchProps = {
-  loadCharacter: (characterName: string) => Promise<void>;
+  loadCharacter: (characterName: string, status: string) => Promise<void>;
 };
 
 import { useState, type KeyboardEvent } from "react";
-
-import classes from "./Search.module.css";
-
-// Icons
+import classes from "./SearchCharacter.module.css";
 import { FaSearch } from "react-icons/fa";
 
 const Search = ({ loadCharacter }: SearchProps) => {
   const [characterName, setCharacterName] = useState("");
+  const [status, setStatus] = useState("");
+
+  const handleSearch = () => {
+    loadCharacter(characterName, status);
+  };
 
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Enter") {
-      loadCharacter(characterName);
+      handleSearch();
     }
   };
 
@@ -29,7 +31,17 @@ const Search = ({ loadCharacter }: SearchProps) => {
           onChange={(e) => setCharacterName(e.target.value)}
           onKeyDown={handleKeyDown}
         />
-        <button onClick={() => loadCharacter(characterName)}>
+
+        <div className={classes.searchSelect}>
+          <select value={status} onChange={(e) => setStatus(e.target.value)}>
+            <option value="">Any status</option>
+            <option value="alive">Alive</option>
+            <option value="dead">Dead</option>
+            <option value="unknown">Unknown</option>
+          </select>
+        </div>
+
+        <button onClick={handleSearch}>
           <FaSearch />
         </button>
       </div>

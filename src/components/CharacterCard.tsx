@@ -10,7 +10,6 @@ const CharacterCard = ({
   status,
   species,
   gender,
-  origin,
   location,
   image,
 }: CharacterProps) => {
@@ -29,9 +28,6 @@ const CharacterCard = ({
         </p>
         <p>
           Gender: <span>{gender}</span>
-        </p>
-        <p>
-          Origin: <span>{origin?.name}</span>
         </p>
         <p>
           Last Location: <span>{location?.name}</span>

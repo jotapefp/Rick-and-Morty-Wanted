@@ -42,9 +42,31 @@
   outline-offset: 2px;
 }
 
+.dots {
+  color: var(--rust, #01b4c6);
+  font-family: "Get Schwifty", cursive;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0.25rem;
+}
+
+.pagination button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  border-color: rgba(151, 206, 76, 0.1);
+  color: var(--rust, #01b4c6);
+}
+
+.pagination button:disabled:hover {
+  border-color: rgba(151, 206, 76, 0.1);
+  color: var(--rust, #01b4c6);
+  box-shadow: none;
+}
+
 @media (max-width: 480px) {
   .pagination {
-    margin: 3rem 0; 
+    margin: 3rem 0;
     gap: 0.4rem;
   }
 
