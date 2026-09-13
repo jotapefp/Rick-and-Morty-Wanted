@@ -2,6 +2,8 @@
 
 Projeto autoral desenvolvido para fins de estudo, com o objetivo de praticar consumo de API, componentização em React e boas práticas de desenvolvimento front-end usando TypeScript.
 
+**Status: projeto finalizado** ✅
+
 Link para teste: https://rick-and-morty-wanted.vercel.app/
 
 ### 🧪 Tecnologias utilizadas
@@ -15,29 +17,39 @@ Link para teste: https://rick-and-morty-wanted.vercel.app/
 ### ⚙️ Funcionalidades
 
 - **Home**: página informativa, acessível a qualquer momento pelo link "Home" na navbar
-- **Characters**: aba da navbar onde fica a aplicação, com o campo de input onde o usuário digita o nome (ou parte do nome) de um personagem
-- **Listagem de resultados**: exibe todos os personagens cujo nome corresponde à busca, com seus dados (nome, status, espécie, gênero, origem, localização e imagem)
-- **Paginação**: navegação por números de página, respeitando o filtro de busca aplicado — buscas com muitos resultados agora exibem todas as páginas disponíveis, não só a primeira
-- **Página de detalhes**: ao clicar em "View Details" num personagem, o usuário acessa uma página dedicada com informações completas (espécie, gênero, status, origem, última localização, número de aparições em episódios e tipo)
-- **Tratamento de erro**: mensagem exibida quando nenhum personagem é encontrado com o nome pesquisado
+- **Characters**: aba da navbar onde fica a aplicação, com campo de busca por nome de personagem e filtro por status (Alive, Dead, Unknown ou "Any status")
+- **Busca combinada**: nome e status podem ser usados juntos ou separadamente — inclusive é possível listar todos os personagens da API sem digitar nenhum nome, usando apenas o filtro "Any status"
+- **Listagem de resultados**: exibe todos os personagens correspondentes à busca, com seus dados (nome, status, espécie, gênero, localização e imagem)
+- **Paginação**: navegação por números de página truncados (com reticências para grandes volumes de resultados) e botões de anterior/próxima página, respeitando os filtros aplicados
+- **Página de detalhes**: ao clicar em "View Details" num personagem, o usuário acessa uma página dedicada com informações completas (espécie, gênero, status, origem, última localização, tipo) e a lista de episódios em que o personagem aparece, com código, nome e data de exibição de cada um
+- **Tratamento de erro**: mensagem exibida quando nenhum personagem é encontrado com os filtros aplicados
 - **Responsividade**: layout adaptado para desktop, tablet e celular, mantendo a mesma identidade visual em todos os tamanhos de tela
 
 ### 🎨 Estilização
 
-Identidade visual construída em torno do tema "painel de laboratório interdimensional": fundo escuro, tipografia temática (Get Schwifty nos títulos, Bangers no corpo de texto), cores associadas ao status dos personagens (vivo, morto, desconhecido) e efeitos visuais inspirados no universo da série. O CSS foi refinado na v2 com breakpoints para diferentes tamanhos de tela.
+Identidade visual construída em torno do tema "Rick and Morty": fundo escuro, tipografia temática (Get Schwifty nos títulos, Bangers no corpo de texto), cores associadas ao status dos personagens (vivo, morto, desconhecido) e efeitos visuais inspirados no universo da série. CSS totalmente responsivo, com breakpoints para desktop, tablet e celular.
 
-### 🆕 Novidades da v2
+### 🆕 Changelog
 
+**v3 (2.0.5/2.0.6)**
+- Adicionado filtro de busca por status (Alive, Dead, Unknown), combinável com o nome
+- Habilitada a listagem de todos os personagens da API sem necessidade de busca por nome
+- Paginação truncada com reticências e botões de anterior/próxima página, substituindo a listagem de todos os números de página
+- Página de detalhes expandida com a lista de episódios em que o personagem aparece
+
+**v2**
 - Implementada paginação completa dos resultados da API (antes, só a primeira página era exibida)
 - Criada a página de detalhes por personagem
 - CSS revisado e expandido com media queries para tablet e celular
 - Corrigidos bugs de layout que causavam overflow horizontal em telas pequenas
 
-### 🗺️ Roadmap (próximas versões)
+**v1**
+- Versão inicial: busca de personagens por nome, listagem de resultados e tratamento de erro
 
-- [ ] Novas formas de buscar informações da API (episódios e locais)
-- [ ] Trazer mais informações quando entrar na página de detalhes
-- [ ] Uma maneira de mostrar todos os personagens sem fazer a busca
+### 🙏 Agradecimentos
+
+- **Ivy** — pela ajuda na escolha de algumas das paletas de cores do projeto
+- **John** — pela ajuda nos testes, identificando erros e pontos de melhoria
 
 ### 📎 Créditos e referências
 
@@ -48,6 +60,6 @@ Este projeto utiliza assets e recursos de terceiros, listados abaixo com os devi
 - **Fontes**:
   - [Get Schwifty, por Jonizaak — DeviantArt](https://www.deviantart.com/jonizaak/art/Get-Schwifty-A-Rick-and-Morty-font-638073728)
   - [Bangers — Google Fonts](https://fonts.google.com/specimen/Bangers)
-- **Dados dos personagens**: [Rick and Morty API](https://rickandmortyapi.com/)
+- **Dados dos personagens e episódios**: [Rick and Morty API](https://rickandmortyapi.com/)
 
 *Rick and Morty é uma propriedade intelectual da Adult Swim. Este é um projeto não-comercial, feito exclusivamente para fins de estudo e portfólio.*
