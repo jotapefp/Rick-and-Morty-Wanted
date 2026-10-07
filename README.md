@@ -6,6 +6,8 @@ Projeto autoral desenvolvido para fins de estudo, com o objetivo de praticar con
 
 Link para teste: https://rick-and-morty-wanted.vercel.app/
 
+<img width="1919" height="1079" alt="Screenshot_1" src="https://github.com/user-attachments/assets/f7838ff2-c579-4770-a8bb-59deb3d9aa58" />
+
 ### 🧪 Tecnologias utilizadas
 
 - React
